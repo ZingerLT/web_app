@@ -1,5 +1,3 @@
-#String reverce
-
 Lab-1
 
 1. Create and run locally simple web/REST service using any open-source example on Java stack: Spring/maven/gradle/Jersey/Spring MVC.
