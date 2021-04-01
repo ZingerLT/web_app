@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <bean id ="inputString"
+          class ="org.example.service.StringReverse">
+
+    </bean>
+
+    <bean id="output"
+          class = "org.example.controller.RollerController">
+        <constructor-arg ref="inputString"/>
+    </bean>
+
+</beans>
+
+
+
+
