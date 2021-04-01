@@ -1,9 +1,7 @@
-# web_app
-Cross-platform-programming 
+String reverce
 
 Lab-1
 
-0. String reverce
 1. Create and run locally simple web/REST service using any open-source example on Java stack: Spring/maven/gradle/Jersey/Spring MVC.
 2. Create GET endpoint with input parameters as URL query params, performing calculation based on your Option, and returning results in JSON format.
 
