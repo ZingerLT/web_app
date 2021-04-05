@@ -1,7 +1,6 @@
 package org.example.cache;
 
 import org.apache.log4j.Logger;
-import org.example.config.SetGets;
 import org.example.service.StringReverse;
 
 import java.util.HashMap;
@@ -9,19 +8,15 @@ import java.util.Map;
 
 public class Cache {
     public static final Logger log = Logger.getLogger(StringReverse.class);
-    private final Map<SetGets, String> CacheMap= new HashMap<SetGets, String>();
+    private final Map<String, String> CacheMap= new HashMap<String, String>();
 
-    public String getAnswer(SetGets setGets) {
-        String answer = CacheMap.get(setGets);
-        if (answer == null) {
-            return answer;
-        }
+    public String getAnswer(String str) {
+        String answer = CacheMap.get(str);
         log.info("Received answer" + " " + answer);
         return answer;
     }
-    public void putAnswer(SetGets setGets, String answer)
-    {
-        CacheMap.put(setGets,answer);
+    public void putAnswer(String str, String answer) {
+        CacheMap.put(str,answer);
         log.info("Put in cache"+" "+answer);
     }
 }

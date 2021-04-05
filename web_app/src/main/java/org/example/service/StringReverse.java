@@ -2,7 +2,6 @@ package org.example.service;
 
 import org.apache.log4j.Logger;
 import org.example.cache.Cache;
-import org.example.config.SetGets;
 import org.example.exception.InputException;
 import org.example.exception.LenghtException;
 import org.example.exception.ServerException;
@@ -11,12 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class StringReverse {
 
     public static final Logger log = Logger.getLogger(StringReverse.class);
+
     @Autowired
-    private static Cache cache;
-
-    public StringReverse(){
-
-    }
 
     public static String Reversing(String str) throws InputException, ServerException, LenghtException {
         log.debug("Start");
@@ -35,21 +30,19 @@ public class StringReverse {
             //return new StringBuilder(str).reverse().toString();
         //}
         String answer = new String();
-        SetGets obj=new SetGets(str);
-        if(cache.getAnswer(obj)==null)
+        Cache cache= new Cache();
+        if(cache.getAnswer(str)==null)
         {
-            log.error("Put in cache!");
-            cache.putAnswer(obj, answer);
+            answer=new StringBuilder(str).reverse().toString();
+            cache.putAnswer(str, answer);
+            log.info("Put in cache!");
         }
         else
         {
-            log.error("Get from cache!");
-            answer=new StringBuilder(str).reverse().toString();
-            cache.getAnswer(obj);
+            cache.getAnswer(str);
+            log.info("Get from cache!");
         }
         return answer;
-
     }
-
 
 }
