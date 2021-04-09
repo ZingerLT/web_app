@@ -2,7 +2,12 @@ package org.example.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Json {
+
+    @JsonProperty("Count")
+    AtomicInteger resCount;
 
     @JsonProperty("Task")
     String task;
@@ -11,15 +16,11 @@ public class Json {
     String resultStr;
 
 
-    public Json(String stroka,String stringReverse)
+    public Json(String stroka, String stringReverse, AtomicInteger count)
     {
         resultStr=stroka;
         task=stringReverse;
+        resCount=count;
     }
-    public Json(String stroka)
-    {
-        task=stroka;
-    }
-
 
 }
