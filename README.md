@@ -19,3 +19,19 @@ Lab-4
 
 1. Add a new service (Counter) which calculates number of your main service calls and returns the number when requested. Counter should be implemented as a separate thread safe bean with synchronized access.
 2. Create high load test for your main service using JMeter, Postman or any other tool. The load test should make thousands of calls in short period of time. Then make sure that Counter correctly calculates number of service calls done by the load test.
+
+Lab-5
+
+1.	Update initial service created in first practical task to have ability to process sequence (stream) of input parameters. Stream API and lambdas should be used for this.
+2.	Add new POST method which should get sequence of input parameters (they can be passed as JSON data in request body, or as simple CSV file), validate them and call new service for processing bulk data. Result can be returned as JSON or CSV file.
+
+Lab-6
+
+1. In previous task we did bulk operation for a stream of input data. In this task we need to apply some statistics calculation using aggregation/reduction. Calculated statistic should be added into POST response data (either JSON or CSV file). Statistics should include:
+ 
+•	Total amount of input parameters (or pairs/triples of parameters) provided
+•	Total amount of input parameters (or pairs/triples of parameters) which produced incorrect result (were not valid)
+•	Maximum and minimum values from results calculated
+•	Result which was returned most times (most popular)
+
+
