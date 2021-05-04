@@ -34,4 +34,6 @@ Lab-6
 •	Maximum and minimum values from results calculated
 •	Result which was returned most times (most popular)
 
+Lab-7 
+1. Добавить возможность сохранения всех результатов вычислений в базе данных или файле, используя стандартные persistence фреймворки Java (Spring Data/Hibernate/MyBatis)
 
