@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.stream.Stream;
-
 
 @RestController
 @RequestMapping("task")
@@ -33,13 +33,17 @@ public class RollerController {
     private Service<Json, Stream<String>> service;
     private static final Logger log = Logger.getLogger(StringReverse.class);
 
+
     @GetMapping
-    public Json Stringing(@RequestParam(value = "string") String str) throws InputException, ServerException, IOException {
+    public Json Stringing(@RequestParam(value = "string") String str) throws InputException, ServerException, IOException, InterruptedException {
         log.info("Get Request param from URL");
         //String stroka = stringReverse.reverse(str);
         //obj.Out(str, stroka, count.getCounter());
         //Json obj = new Json(stroka, str, count.getCounter());
+        FileWriter writer = new FileWriter("file.txt", true);
         Json obj=service.doService(Stream.of(str));
+        writer.write(String.valueOf(obj+"\n"));
+        writer.close();
         log.info("Return task answer");
         return obj;
     }

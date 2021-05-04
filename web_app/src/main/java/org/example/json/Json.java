@@ -10,10 +10,8 @@ public class Json {
 
     @JsonProperty("Count")
     AtomicInteger resCount;
-
     @JsonProperty("Task")
     String task;
-
     @JsonProperty("Result")
     String resultStr;
     @JsonProperty("Max")
@@ -42,4 +40,11 @@ public class Json {
 
     public void SetAverage(float ave){this.ave=ave;}
 
+    public char[] GetInfo()
+    {
+        this.resCount=resCount;
+        this.task=task;
+        this.resultStr=resultStr;
+        return new char[0];
+    }
 }

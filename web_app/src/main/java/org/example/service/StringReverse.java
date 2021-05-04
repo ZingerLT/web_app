@@ -25,6 +25,7 @@ public class StringReverse implements Service<Json, Stream<String>> {
     private Json obj;
     private List<String> resultStr=new ArrayList<>();
 
+
     @Override
     public Json doService(Stream<String> stream) throws InputException, ServerException {
         counter.increment();
